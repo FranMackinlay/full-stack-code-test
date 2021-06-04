@@ -24,7 +24,6 @@ const CreateBookComponent = props => {
   }, []);
 
   const onChangeInput = e => {
-    console.log(`e.target.name`, e.target.name);
     switch (e.target.name) {
       case 'name':
         setName(e.target.value);
