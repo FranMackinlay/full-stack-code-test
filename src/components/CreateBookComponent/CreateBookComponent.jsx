@@ -62,7 +62,7 @@ const CreateBookComponent = props => {
     <div>
       <div className="go-back fm-abs">
         <Link to={`/`}>
-          <button type="button" className="btn btn-success">Go Back</button>
+          <button type="button" className="btn btn-info">Go Back</button>
         </Link>
       </div>
       <h3 className="text-center fm-py-4">

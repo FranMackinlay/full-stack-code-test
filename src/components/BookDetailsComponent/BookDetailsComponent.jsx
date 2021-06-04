@@ -29,7 +29,7 @@ const BookDetailsComponent = props => {
     <div>
       <div className="create-book-cta fm-abs">
         <Link to={`/`}>
-          <button type="button" className="btn btn-success">Go Back</button>
+          <button type="button" className="btn btn-info">Go Back</button>
         </Link>
       </div>
       <div className="book-details-container px-5 col-md-4 m-auto fm-p-3 fm-df fm-fldc fm-jucb">
