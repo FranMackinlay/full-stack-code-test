@@ -53,7 +53,7 @@ const AuthorDetailsComponent = props => {
       last_name: lastName || author.last_name,
     };
 
-    const {data} = await BooksSrv.upsertBook(newAuthor);
+    const {data} = await AuthorsSrv.upsertAuthor(newAuthor);
 
 
     if (data.success) {
@@ -101,7 +101,7 @@ const AuthorDetailsComponent = props => {
           <div className="author-name-container fm-df fm-jucb fm-aliic fm-my-3 fm-w100">
               <label className="col-md-5" htmlFor="name">First name:</label>
               {editMode ? (
-                <input type="text" name="fistName" id="fistName" value={firstName || author.firstName} onChange={onChangeInput}/>
+                <input type="text" name="fistName" id="fistName" value={firstName || author.first_name} onChange={onChangeInput}/>
               ) : (
                 <p className="fm-m-0">{author.first_name}</p>
               )}
