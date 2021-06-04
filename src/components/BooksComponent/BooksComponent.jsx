@@ -26,7 +26,7 @@ export default function BooksComponent() {
           <button type="button" className="btn btn-success">Create book</button>
         </Link>
       </div>
-      <div className="title-container text-center fm-my-4">
+      <div className="title-container text-center fm-py-4">
         <h1>
           Welcome to the <br /> Soamee Public Library!
         </h1>
