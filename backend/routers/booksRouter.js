@@ -14,8 +14,11 @@ router.get('/', expressAsyncHandler(async (req, res) => {
 
 /* GET book by _id */
 router.get('/:bookId', expressAsyncHandler(async (req, res) => {
-  const books = await Book.find()
-  res.send({ books });
+  const _id = req.params.bookId;
+
+  const book = await Book.findById(_id).populate('author', Author);
+
+  res.send({ book });
 }));
 
 /* Post new book */
