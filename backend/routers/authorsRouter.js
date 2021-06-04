@@ -15,27 +15,43 @@ router.get('/', expressAsyncHandler(async (req, res) => {
 router.get('/:authorId', expressAsyncHandler(async (req, res) => {
   const _id = req.params.authorId;
 
-  const book = await Author.findById(_id);
+  const author = await Author.findById(_id);
 
-  res.send({ book });
+  res.send({ author });
 }));
 
-/* Post new author */
+/* Post new book */
 router.post('/', expressAsyncHandler(async (req, res) => {
 
-  // res.send({ books });
+  const { author } = req.body;
+
+  try {
+    const createdAuthor = await Author.create(author);
+
+    res.send({ createdAuthor, success: !!createdAuthor._id });
+  } catch (error) {
+    res.send(error.message);
+  }
+
 }));
 
 /* PUT update author by _id */
 router.put('/:authorId', expressAsyncHandler(async (req, res) => {
+  const { authorId } = req.params;
+  const { author } = req.body;
 
-  // res.send({ books });
+
+  const upsertedAuthor = await Author.findByIdAndUpdate(authorId, author, { new: true });
+
+  res.send({ upsertedAuthor, success: !!upsertedAuthor._id });
 }));
 
 /* DELETE author by _id. */
-router.delete('/:bookId', expressAsyncHandler(async (req, res) => {
+router.delete('/:authorId', expressAsyncHandler(async (req, res) => {
+  const { authorId } = req.params;
 
-  // res.send({ books });
+  await Author.findOneAndDelete({ _id: authorId });
+  res.send({ success: true });
 }));
 
 
