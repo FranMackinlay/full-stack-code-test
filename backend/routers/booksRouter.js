@@ -24,7 +24,16 @@ router.get('/:bookId', expressAsyncHandler(async (req, res) => {
 /* Post new book */
 router.post('/', expressAsyncHandler(async (req, res) => {
 
-  // res.send({ books });
+  const { book } = req.body;
+
+  try {
+    const createdBook = await Book.create(book);
+
+    res.send({ createdBook, success: !!createdBook._id });
+  } catch (error) {
+    res.send(error.message);
+  }
+
 }));
 
 /* PUT update book by _id */
