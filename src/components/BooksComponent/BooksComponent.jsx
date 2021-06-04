@@ -20,7 +20,7 @@ export default function BooksComponent() {
   }, [])
 
   return (
-    <div className="fm-p-3">
+    <div>
       <div className="create-book-cta fm-abs fm-right">
         <Link to={`/book/new`}>
           <button type="button" className="btn btn-success">Create book</button>
