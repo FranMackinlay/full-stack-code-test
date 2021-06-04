@@ -12,7 +12,7 @@ const BooksSrv = {
   },
   getBook: async bookId => {
     const res = await axios({
-      method: 'get',
+      method: 'GET',
       url: `${API_URL}/books/${bookId}`,
     });
     return res;
@@ -20,9 +20,9 @@ const BooksSrv = {
   upsertBook: async book => {
     if (!book._id) return await BooksSrv.createBook(book);
     const res = await axios({
-      method: 'put',
+      method: 'PUT',
       url: `${API_URL}/books/${book._id}`,
-      body: {
+      data: {
         book,
       },
     });
@@ -35,6 +35,13 @@ const BooksSrv = {
       data: {
         book,
       },
+    });
+    return res;
+  },
+  deleteBook: async id => {
+    const res = await axios({
+      method: 'DELETE',
+      url: `${API_URL}/books/${id}`,
     });
     return res;
   }
