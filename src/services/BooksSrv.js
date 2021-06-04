@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://evening-hollows-75606.herokuapp.com/api';
+const API_URL = '/api';
 
 const BooksSrv = {
   getBooks: async () => {
