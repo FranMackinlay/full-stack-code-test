@@ -30,6 +30,9 @@ export default function BooksComponent() {
   return (
     <div>
       <div className="create-book-cta fm-abs fm-right">
+        <Link to={`/author/new`} className="fm-mr-2">
+          <button type="button" className="btn btn-success">Create author</button>
+        </Link>
         <Link to={`/book/new`}>
           <button type="button" className="btn btn-success">Create book</button>
         </Link>
