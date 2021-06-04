@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import AuthorsSrv from '../../services/AuthorsSrv';
 import BooksSrv from '../../services/BooksSrv';
 import './CreateBookComponent.css';
@@ -60,7 +61,12 @@ const CreateBookComponent = props => {
 
   return (
     <div>
-      <h3 className="text-center fm-my-4">
+      <div className="go-back fm-abs">
+        <Link to={`/`}>
+          <button type="button" className="btn btn-success">Go Back</button>
+        </Link>
+      </div>
+      <h3 className="text-center fm-py-4">
         Create new book
       </h3>
       <form className="create-book-form col-md-4 m-auto text-center" action="" onSubmit={onSubmit}>
