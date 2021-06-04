@@ -10,6 +10,13 @@ const BooksSrv = {
     });
     return res;
   },
+  getBook: async bookId => {
+    const res = await axios({
+      method: 'get',
+      url: `${API_URL}/books/${bookId}`,
+    });
+    return res;
+  },
   upsertBook: async book => {
     if (!book._id) return await BooksSrv.createBook(book);
     const res = await axios({
