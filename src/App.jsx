@@ -5,6 +5,7 @@ import './index.css';
 import BooksComponent from './components/BooksComponent/BooksComponent';
 import CreateBookComponent from './components/CreateBookComponent/CreateBookComponent';
 import BookDetailsComponent from './components/BookDetailsComponent/BookDetailsComponent';
+import AuthorDetailsComponent from './components/AuthorDetailComponent/AuthorDetailsComponent';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Switch>
           <Route path="/book/new" component={CreateBookComponent} />
           <Route path="/book/:bookId" component={BookDetailsComponent} />
+          <Route path="/author/:authorId" component={AuthorDetailsComponent} />
           <Route path="/" component={BooksComponent} />
         </Switch>
       </Router >
