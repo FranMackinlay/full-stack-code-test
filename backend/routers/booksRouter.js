@@ -13,28 +13,28 @@ router.get('/', expressAsyncHandler(async (req, res) => {
 }));
 
 /* GET book by _id */
-router.get('/:bookId', function (req, res) {
-
-  res.send('index', { title: 'Express' });
-});
+router.get('/:bookId', expressAsyncHandler(async (req, res) => {
+  const books = await Book.find()
+  res.send({ books });
+}));
 
 /* Post new book */
-router.post('/', function (req, res) {
+router.post('/', expressAsyncHandler(async (req, res) => {
 
-  res.send('index', { title: 'Express' });
-});
+  // res.send({ books });
+}));
 
 /* PUT update book by _id */
-router.put('/:bookId', function (req, res) {
+router.put('/:bookId', expressAsyncHandler(async (req, res) => {
 
-  res.send('index', { title: 'Express' });
-});
+  // res.send({ books });
+}));
 
 /* DELETE book by _id. */
-router.delete('/:bookId', function (req, res, next) {
+router.delete('/:bookId', expressAsyncHandler(async (req, res) => {
 
-  res.render('index', { title: 'Express' });
-});
+  // res.send({ books });
+}));
 
 
 
