@@ -1,71 +1,70 @@
-# Soamee Full-stack web developer challenge
+# Getting Started with Create React App
 
-In this test, you are expected to write a small web application to manage a list of Books. Each book has a name, ISBN, and an author. The test consists of two parts, a RESTful API as the **backend** and the Javascript based **frontend** application.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-There is no need to create a PR back to this repository once completed, please provide a link to your project repository for review.
+## Available Scripts
 
-## Backend implementation
+In the project directory, you can run:
 
-Use the following structure to model the data
+### `npm start`
 
-```
-Author(Model):
-    first_name: TextField
-    last_name: TextField
-```
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-```
-Book(Model):
-    name: TextField
-    isbn: TextField
-    author: ForeignKey(Author)
-```
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-Implement the following API endpoints:
+### `npm test`
 
-* **GET /books/** - Returns a list of books in the database in JSON format
-* **GET /book/{{id}}/** - Returns a detail view of the specified book id. Nest author details in JSON format
-* **GET /authors/** - Returns a list of authors in the database in JSON format
-* **GET /author/{{id}}/** - Returns a detail view of the specified author id
-* **POST /author/** - Creates a new author with the specified details - Expects a JSON body
-* **POST /book/** - Creates a new book with the specified details - Expects a JSON body
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-_Optional_: You can go a step further by implementing API endpoints to update existing records if you like.
+### `npm run build`
 
-eg:
-* **PUT /author/{{id}}** - Updates an existing author - Expects a JSON body
-* **PUT /book/{{id}}** - Updates an existing book - Expects a JSON body
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-You are recommended to use **Node.js** to implement your backend and API layer, but you are free to use a different language/framework/libraries you are comfortable with.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Frontend implementation
+### `npm run eject`
 
-Implement a small frontend application to consume the API you developed above.
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-The frontend should be able to show a list of names of the books available in the database. Upon clicking the name of a book on the list, the user should be navigated to a more detailed view of the selected book, where they are presented with the ISBN and the author details. You should also implement two forms where the user is able to create/update authors and books (using the POST and PUT endpoints)
-You are recommended to use **ReactJS** to create the frontend, but you are free to use a different Javascript framework.
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-## Purpose
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-* Evaluate your coding abilities
-* Judge your technical experience
-* Understand how you design a solution
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## How you will be judged
+## Learn More
 
-You will be scored on,
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-* Coding standard, comments and style
-* Overall solution design
-* Appropriate use of source control
-* Unit testing strategy (if present)
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Notes and recommendations
+### Code Splitting
 
-* Fork the repo and start working on yours
-* The languages, frameworks and libraries mentioned are recommendations only, you are free to use whatever you are comfortable with.
-* The project structure is up to you to decide
-* You are recommended to use git commits in a logical manner to demonstrate the development progress
-* Deploying to a PAAS like Heroku would be awesome to check how it works
-* Writing tests and adhering to development standards/conventions will let you gain extra points :)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
