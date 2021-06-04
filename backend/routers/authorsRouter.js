@@ -56,6 +56,7 @@ router.delete('/:authorId', expressAsyncHandler(async (req, res) => {
   const { authorId } = req.params;
 
   await Author.findOneAndDelete({ _id: authorId });
+
   res.send({ success: true });
 }));
 
