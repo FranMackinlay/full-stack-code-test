@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import './App.css';
 import './index.css';
-import BooksComponent from './components/BooksComponent';
+import BooksComponent from './components/BooksComponent/BooksComponent';
 
 
 function App() {

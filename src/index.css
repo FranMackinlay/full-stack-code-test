@@ -62,6 +62,17 @@ input:disabled {
   background-color: darkgray !important;
 }
 
+.link-clean {
+  text-decoration: none;
+}
+
+.link-clean:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
 .fm-df {
   display: flex;
 }
@@ -924,6 +935,10 @@ input:disabled {
 
 .fm-abs {
   position: absolute !important;
+}
+
+.fm-right {
+  right: 1em;
 }
 
 .fm-rel {
