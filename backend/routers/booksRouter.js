@@ -38,14 +38,21 @@ router.post('/', expressAsyncHandler(async (req, res) => {
 
 /* PUT update book by _id */
 router.put('/:bookId', expressAsyncHandler(async (req, res) => {
+  const { bookId } = req.params;
+  const { book } = req.body;
 
-  // res.send({ books });
+
+  const upsertedBook = await Book.findByIdAndUpdate(bookId, book, { new: true }).populate('author', Author);
+
+  res.send({ upsertedBook, success: !!upsertedBook._id });
 }));
 
 /* DELETE book by _id. */
 router.delete('/:bookId', expressAsyncHandler(async (req, res) => {
+  const { bookId } = req.params;
 
-  // res.send({ books });
+  await Book.findOneAndDelete({ _id: bookId });
+  res.send({ success: true });
 }));
 
 
