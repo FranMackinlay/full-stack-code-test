@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import booksRouter from './routers/booksRouter.js';
+import authorsRouter from './routers/authorsRouter.js';
 
 dotenv.config();
 
@@ -11,6 +12,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.use('/api/authors', authorsRouter);
 app.use('/api/books', booksRouter);
 
 
