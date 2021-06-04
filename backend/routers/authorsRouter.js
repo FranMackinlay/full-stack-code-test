@@ -1,6 +1,7 @@
 import express from 'express';
 import expressAsyncHandler from 'express-async-handler';
 import Author from '../models/AuthorSchema.js';
+import Book from '../models/BooksSchema.js';
 
 
 const router = express.Router();
@@ -15,7 +16,11 @@ router.get('/', expressAsyncHandler(async (req, res) => {
 router.get('/:authorId', expressAsyncHandler(async (req, res) => {
   const _id = req.params.authorId;
 
-  const author = await Author.findById(_id);
+  const author = await Author.findById(_id).lean();
+
+  const books = await Book.find();
+
+  author.books = books.filter(book => book.author.toString() === author._id.toString());
 
   res.send({ author });
 }));
