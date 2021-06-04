@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import AuthorsSrv from '../../services/AuthorsSrv';
-import BooksSrv from '../../services/BooksSrv';
 import LoadingBox from '../LoadingBox/LoadingBox';
 import './AuthorDetailsComponent.css';
 
