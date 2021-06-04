@@ -18,6 +18,10 @@ body {
   font-family: 'Circular-Loom';
 }
 
+body {
+  padding: 1.5em;
+}
+
 a:hover {
   text-decoration: none;
 }
