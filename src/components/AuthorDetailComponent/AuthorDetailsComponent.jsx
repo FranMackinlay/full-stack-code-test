@@ -36,7 +36,7 @@ const AuthorDetailsComponent = props => {
   const onClickDeleteAuthor = async e => {
     e?.preventDefault();
     const {data} = await AuthorsSrv.deleteAuthor(author._id);
-    debugger;
+
     if (data.success) {
       alert('Author deleted successfully');
       props.history.push('/');
@@ -113,6 +113,19 @@ const AuthorDetailsComponent = props => {
               ) : (
                 <p className="fm-m-0">{author.last_name}</p>
               )}
+            </div>
+            <div className="author-books">
+              Books:
+              <ul className="list-unstyled">
+                {author.books.length ? (
+                  author.books.map(book => (
+                    <li key={book._id}>
+                      - {book.name}
+                    </li>
+                  ))): (
+                    <span>- {author.first_name} has no books yet!</span>
+                  )}
+              </ul>
             </div>
             {editMode && (
               <div className="details-tas fm-df fm-juce fm-aliic">
