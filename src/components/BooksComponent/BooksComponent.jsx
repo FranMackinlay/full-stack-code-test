@@ -9,11 +9,6 @@ export default function BooksComponent() {
 
   const [books, setBooks] = useState([]);
 
-  const openCreateBookModal = () => {
-
-  }
-
-
   useEffect(() => {
 
     const getBooks = async () => {
@@ -27,8 +22,8 @@ export default function BooksComponent() {
   return (
     <div className="fm-p-3">
       <div className="create-book-cta fm-abs fm-right">
-        <Link to={openCreateBookModal}>
-          <button type="button" class="btn btn-success">Create book</button>
+        <Link to={`/book/new`}>
+          <button type="button" className="btn btn-success">Create book</button>
         </Link>
       </div>
       <div className="title-container text-center fm-my-4">
@@ -49,9 +44,11 @@ export default function BooksComponent() {
             <tbody>
               {books.map(book => (
                 <tr key={book._id}>
-                  <Link className="fm-df fm-jucc link-clean" to={`/book/${book._id}`} >
-                    <th>{book.name}</th>
-                  </Link>
+                  <th>
+                    <Link className="link-clean" to={`/book/${book._id}`} >
+                      {book.name}
+                    </Link>
+                  </th>
                 </tr>
               ))}
             </tbody>
