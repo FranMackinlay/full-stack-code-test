@@ -42,7 +42,6 @@ const CreateBookComponent = props => {
 
   const onSubmit = async e => {
     e?.preventDefault();
-    console.log('here');
     const newBook = {
       name,
       isbn,
