@@ -9,6 +9,10 @@ export default function BooksComponent() {
 
   const [books, setBooks] = useState([]);
 
+  const openCreateBookModal = () => {
+
+  }
+
 
   useEffect(() => {
 
@@ -23,7 +27,9 @@ export default function BooksComponent() {
   return (
     <div className="fm-p-3">
       <div className="create-book-cta fm-abs fm-right">
-        <button type="button" class="btn btn-success">Success</button>
+        <Link to={openCreateBookModal}>
+          <button type="button" class="btn btn-success">Create book</button>
+        </Link>
       </div>
       <div className="title-container text-center fm-my-4">
         <h1>
